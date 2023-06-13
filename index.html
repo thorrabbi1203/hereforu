@@ -4,20 +4,17 @@
     <title>Thor here for u</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <audio id="myAudio" controls autoplay hidden="true" loop muted>
+  <body onclick="play()">
+    <audio id="myAudio" controls autoplay hidden="true" loop>
       <source src="audio.mp3" type="audio/mp3" />
     </audio>
     <canvas id="canvas" width="2500" height="1000"></canvas>
     <script src="script.js"></script>
     <script>
       let play = function () {
-        setTimeout(() => {
-          document.getElementById("myAudio").muted = false;
-          document.getElementById("myAudio").volume = 0.5;
-        }, 1000);
+        document.getElementById("myAudio").volume = 0.5;
+        document.getElementById("myAudio").play();
       };
-      play();
     </script>
   </body>
 </html>
