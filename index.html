@@ -5,14 +5,17 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <audio id="myAudio" controls autoplay hidden="true" loop>
+    <audio id="myAudio" controls autoplay hidden="true" loop muted>
       <source src="audio.mp3" type="audio/mp3" />
     </audio>
     <canvas id="canvas" width="2500" height="1000"></canvas>
     <script src="script.js"></script>
     <script>
       let play = function () {
-        document.getElementById("myAudio").volume = 0.5;
+        setTimeout(() => {
+          document.getElementById("myAudio").muted = false;
+          document.getElementById("myAudio").volume = 0.5;
+        }, 1000);
       };
       play();
     </script>
